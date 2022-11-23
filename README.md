@@ -2,6 +2,12 @@
 
 #### @mapbox/node-pre-gyp makes it easy to publish and install Node.js C++ addons from binaries
 
+## NOTE:
+
+**This fork is only to serve the purpose of maintaining existing functionality and security through dependency upgrades and minor code changes.**
+
+**For information on new developments, visit the [pull requests](https://github.com/mapbox/node-pre-gyp/pulls) and [issues](https://github.com/mapbox/node-pre-gyp/issues) sections from the upstream.**
+
 [![Build Status](https://travis-ci.com/mapbox/node-pre-gyp.svg?branch=master)](https://travis-ci.com/mapbox/node-pre-gyp)
 [![Build status](https://ci.appveyor.com/api/projects/status/3nxewb425y83c0gv)](https://ci.appveyor.com/project/Mapbox/node-pre-gyp)
 

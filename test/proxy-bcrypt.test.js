@@ -7,7 +7,13 @@ const os = require('os');
 
 const tar = require('tar-fs');
 const Agent = require('https-proxy-agent');
-const fetch = require('node-fetch');
+let fetch;
+// eslint-disable-next-line node/no-unsupported-features/es-syntax
+import('node-fetch')
+  .then((fetchRes) => {
+    fetch = fetchRes.default;
+  })
+  .catch((e) => console.error(e.message));
 const rimraf = require('rimraf');
 
 const test = require('tape');
@@ -29,7 +35,8 @@ let initial_mock_s3;
 const downloadDir = `${os.tmpdir()}/npg-download`;
 
 // https://stackoverflow.com/questions/38599457/how-to-write-a-custom-assertion-for-testing-node-or-javascript-with-tape-or-che
-test.Test.prototype.stringContains = function(actual, contents, message) {
+// eslint-disable-next-line space-before-function-paren
+test.Test.prototype.stringContains = function (actual, contents, message) {
   this._assert(actual.indexOf(contents) > -1, {
     message: message || 'should contain ' + contents,
     operator: 'stringContains',
@@ -52,7 +59,8 @@ function ciSkip(...args) {
     test(...args);
   }
 }
-ciSkip.skip = function(...args) {
+// eslint-disable-next-line space-before-function-paren
+ciSkip.skip = function (...args) {
   test.skip(...args);
 };
 
